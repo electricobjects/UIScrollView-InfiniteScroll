@@ -574,9 +574,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
         // Only show the infinite scroll if it is allowed
         if([self pb_shouldShowInfiniteScroll]) {
             [self pb_startAnimatingInfiniteScroll];
-            
-            // This will delay handler execution until scroll deceleration
-            [self performSelector:@selector(pb_callInfiniteScrollHandler) withObject:self afterDelay:0.1 inModes:@[ NSDefaultRunLoopMode ]];
+            [self pb_callInfiniteScrollHandler];
         }
     }
 }
